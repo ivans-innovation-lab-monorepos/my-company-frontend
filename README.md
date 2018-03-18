@@ -1,5 +1,4 @@
 # my-company-frontend
-My Company Frontend - MonoRepo
 
 This **frontend** application/s is a mono-repo version of the [lab (multi-repo version)](http://ivans-innovation-lab.github.io/), and represents its predecessor. It conusumes a [REST API](https://github.com/ivans-innovation-lab-monorepos/my-company-backend).
 
