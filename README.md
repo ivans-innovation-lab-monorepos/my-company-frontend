@@ -7,13 +7,12 @@ This **frontend** application/s is a mono-repo version of the [lab (multi-repo v
 
 Instead of having a large monolith, we have dozens of small libraries with well-defined public APIs (and an [Nx Workspace](https://nrwl.io/nx/why-a-workspace) ensures you only use your libraries’ public APIs).
 
-You can develop and test these libraries independently. If at one point you want to extract a library into a separate repository, you can do it in minutes. 
+At this stage we have one deployment pipeline for all applications and libraries together.
 
 ## Benefits
 
 - Unified versioning
    - Everything at that current commit works together
-   - A label or branch can capture the same
 - Promotes code sharing and reuse
    - Easy to split code into lib modules
    - Easy to consume/implement that code and the latest changes to it
