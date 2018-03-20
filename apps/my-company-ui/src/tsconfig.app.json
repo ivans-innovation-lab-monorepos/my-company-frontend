@@ -1,0 +1,19 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../../dist/out-tsc/apps/my-company-ui",
+    "module": "es2015"
+  },
+  "include": [
+    "**/*.ts"
+  
+    , "../../../libs/blog/index.ts"
+
+    , "../../../libs/projects/index.ts"
+
+    , "../../../libs/team/index.ts"
+],
+  "exclude": [
+    "**/*.spec.ts"
+  ]
+}

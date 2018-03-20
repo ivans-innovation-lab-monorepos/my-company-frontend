@@ -1,0 +1,15 @@
+<app-main-new title="Publish Blog Post">
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+    <mat-input-container floatingPlaceholder=true style="width: 100%">
+      <input matInput placeholder="Publish At" [matDatepicker]="myDatepicker" formControlName="publishAt">
+      <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+      <mat-datepicker #myDatepicker></mat-datepicker>
+    </mat-input-container>
+    <p>
+      <button mat-raised-button color="accent"  type="submit" [disabled]="!form.valid">Submit</button>
+    </p>
+    <p class="error">
+      {{error?.name}} {{error?.message}}
+    </p>
+  </form>
+</app-main-new>

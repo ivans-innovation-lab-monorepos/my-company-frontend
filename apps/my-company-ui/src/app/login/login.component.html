@@ -1,0 +1,26 @@
+<app-main title="Login" subTitle="We are happy to have you here">
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+        <mat-input-container fxFlexFill>
+          <input matInput name="username" [(ngModel)]="model.username" #username="ngModel" required
+                 placeholder="Username"/>
+        </mat-input-container>
+        <div *ngIf="f.submitted && !username.valid" class="alert alert-danger">Username is required</div>
+      </div>
+      <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+        <mat-input-container fxFlexFill>
+          <input matInput type="password" name="password" [(ngModel)]="model.password" #password="ngModel" required
+                 placeholder="Password"
+          />
+        </mat-input-container>
+        <div *ngIf="f.submitted && !password.valid" class="alert alert-danger">Password is required</div>
+      </div>
+      <div class="form-group">
+        <button [disabled]="loading" mat-raised-button color="accent" type="submit">Sign In</button>
+      </div>
+      <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+    </form>
+  </div>
+</app-main>
+

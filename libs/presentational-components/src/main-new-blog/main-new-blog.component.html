@@ -1,0 +1,36 @@
+<app-main-new title="New Blog Post">
+    <form [formGroup]="form" (ngSubmit)="submit(form)">
+        <mat-input-container floatingPlaceholder=true style="width: 100%">
+          <input matInput placeholder="Title" formControlName="title">
+        </mat-input-container>
+        <mat-input-container floatingPlaceholder=true style="width: 100%">
+          <textarea matInput placeholder="Content" formControlName="rawContent"></textarea>
+        </mat-input-container>
+        <mat-input-container floatingPlaceholder=true style="width: 100%">
+          <input matInput placeholder="Public Slug" formControlName="publicSlug">
+        </mat-input-container>
+        <mat-input-container floatingPlaceholder=true style="width: 100%">
+          <input matInput placeholder="Publish At" [matDatepicker]="myDatepicker" formControlName="publishAt">
+          <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+          <mat-datepicker #myDatepicker></mat-datepicker>
+        </mat-input-container>
+        <p style="width: 100%">
+          <mat-select placeholder="Category" formControlName="category" style="width: 100%">
+            <mat-option value="ENGINEERING">Engineering</mat-option>
+            <mat-option value="RELEASES">Releases</mat-option>
+            <mat-option value="NEWS_AND_EVENTS">News and Events</mat-option>
+          </mat-select>
+        </p>
+        <mat-checkbox color="primary" formControlName="draft" [checked]="true">
+          Draft
+        </mat-checkbox>
+        <mat-checkbox color="primary" formControlName="broadcast" [checked]="true">
+          Broadcast
+        </mat-checkbox>
+
+        <p>
+          <button mat-raised-button color="accent" type="submit" [disabled]="!form.valid">Submit</button>
+        </p>
+
+      </form>
+</app-main-new>

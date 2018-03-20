@@ -1,0 +1,13 @@
+<nav>
+  <mat-nav-list>
+    <h3 mat-subheader>Navigation</h3>
+    <app-side-menu-item *ngIf="authenticated" primaryTitle="Logout" routerLinkUrl="/" icon="account_box" [nav]="nav" (click)="logout()"></app-side-menu-item>
+    <app-side-menu-item *ngIf="!authenticated" primaryTitle="Login" routerLinkUrl="/login" icon="account_box" [nav]="nav"></app-side-menu-item>
+    <app-side-menu-item primaryTitle="Home" routerLinkUrl="/" icon="home" [nav]="nav"></app-side-menu-item>
+    <h4 *ngIf="authenticated" mat-subheader>Admin</h4>
+    <app-side-menu-item *ngIf="authenticated"  primaryTitle="Blog" routerLinkUrl="/blog" icon="comments" [nav]="nav"></app-side-menu-item>
+    <app-side-menu-item *ngIf="authenticated"  primaryTitle="Projects" routerLinkUrl="/projects" icon="list" [nav]="nav"></app-side-menu-item>
+    <app-side-menu-item *ngIf="authenticated"  primaryTitle="Teams" routerLinkUrl="/teams" icon="people" [nav]="nav"></app-side-menu-item>
+    <app-side-menu-item *ngIf="authenticated"  primaryTitle="Users" routerLinkUrl="/users" icon="account_circle" [nav]="nav"></app-side-menu-item>
+  </mat-nav-list>
+</nav>

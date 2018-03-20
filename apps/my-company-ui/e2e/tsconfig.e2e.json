@@ -1,0 +1,26 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../../dist/out-tsc/e2e/my-company-ui",
+    "module": "commonjs",
+    "target": "es5",
+    "types": [
+      "jasmine",
+      "jasminewd2",
+      "node"
+    ]
+  },
+  "include": [
+    "../**/*.ts"
+    /* add all lazy-loaded libraries here: "../../../libs/my-lib/index.ts" */
+  
+    , "../../../libs/blog/index.ts"
+
+    , "../../../libs/projects/index.ts"
+
+    , "../../../libs/team/index.ts"
+],
+  "exclude": [
+    "**/*.spec.ts"
+  ]
+}

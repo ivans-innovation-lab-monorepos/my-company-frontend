@@ -1,0 +1,29 @@
+<app-main-detail title="Blog detail">
+  <mat-tab-group>
+    <mat-tab label="Properties">
+      <mat-card class="mat-elevation-z0">
+        <mat-card-title>{{blogPost?.title}}</mat-card-title>
+        <mat-card-subtitle>
+          <p>{{blogPost?.category}} | Draft: {{blogPost?.draft}} | {{blogPost?.publishAt | date}}</p>
+        </mat-card-subtitle>
+        <mat-card-content>
+          {{blogPost?.renderContent}}
+        </mat-card-content>
+      </mat-card>
+    </mat-tab>
+    <mat-tab label="Actions">
+      <mat-nav-list>
+        <a mat-list-item [routerLink]="publishRouterLinkUrl">
+          <mat-icon mat-list-icon>thumb_up</mat-icon>
+          <span mat-line>Publish</span>
+          <span mat-line>Publish your blog post. This will make your post public.</span>
+        </a>
+        <a mat-list-item [routerLink]="unpublishRouterLinkUrl">
+          <mat-icon mat-list-icon>thumb_down</mat-icon>
+          <span mat-line>UnPublish</span>
+          <span mat-line>Un Publish your blog post.</span>
+        </a>
+      </mat-nav-list>
+    </mat-tab>
+  </mat-tab-group>
+</app-main-detail>

@@ -1,0 +1,37 @@
+<app-main-list>
+  <mat-table #table [dataSource]="dataSource">
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+      <mat-cell *matCellDef="let element"> <a [routerLink]="[element.id]">{{ element.title }}</a> </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="renderContent">
+      <mat-header-cell *matHeaderCellDef> Content </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.renderContent}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="publishAt">
+      <mat-header-cell *matHeaderCellDef> Published at </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.publishAt | date}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="category">
+      <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.category}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <mat-paginator (page)="pageChanged($event)" [pageSizeOptions]="[5, 10, 15, 35, 50, 100, 200]" [length]="dataSource?.page?.totalElements"
+    [pageIndex]="dataSource?.page?.number" [pageSize]="dataSource?.page?.size">
+  </mat-paginator>
+
+  <button color="accent" mat-raised-button [routerLink]="'action/new'">Create New Post</button>
+</app-main-list>
