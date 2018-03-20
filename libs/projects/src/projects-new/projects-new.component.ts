@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { EventManager, ProjectsService, ProjectModel } from '@my-company-frontend/shared';
-
+import {
+  EventManager,
+  ProjectsService,
+  ProjectModel
+} from '@my-company-frontend/shared';
 
 @Component({
   selector: 'app-projects-new',
@@ -10,7 +13,6 @@ import { EventManager, ProjectsService, ProjectModel } from '@my-company-fronten
   styleUrls: ['./projects-new.component.scss']
 })
 export class ProjectsNewComponent implements OnInit {
-
   form: FormGroup;
   isSaving: Boolean;
 
@@ -22,29 +24,34 @@ export class ProjectsNewComponent implements OnInit {
     private eventManager: EventManager
   ) {
     this.form = fb.group({
-      'name': ['', Validators.required],
-      'repoUrl': ['', Validators.required],
-      'siteUrl': ['', Validators.required],
-      'description': ['', Validators.required],
-      'category': ['', Validators.required]
+      name: ['', Validators.required],
+      repoUrl: ['', Validators.required],
+      siteUrl: ['', Validators.required],
+      description: ['', Validators.required],
+      category: ['', Validators.required]
     });
   }
 
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
-
-  onSubmit({ value, valid }: { value: ProjectModel, valid: boolean }) {
-    this.projectsService.addProject(value).subscribe(response => this.onSaveSuccess(response), () => this.onSaveError());
+  onSubmit({ value, valid }: { value: ProjectModel; valid: boolean }) {
+    this.projectsService
+      .addProject(value)
+      .subscribe(
+        response => this.onSaveSuccess(response),
+        () => this.onSaveError()
+      );
   }
 
   private onSaveSuccess(result) {
-    this.eventManager.broadcast({ name: 'projectListModification', content: 'OK' });
+    this.eventManager.broadcast({
+      name: 'projectListModification',
+      content: 'OK'
+    });
     this.isSaving = false;
   }
 
   private onSaveError() {
     this.isSaving = false;
   }
-
 }

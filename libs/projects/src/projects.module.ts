@@ -12,7 +12,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PresentationalComponentsModule } from '@my-company-frontend/presentational-components';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard, AdminAuthGuard, ProjectsService } from '@my-company-frontend/shared';
+import {
+  AuthGuard,
+  AdminAuthGuard,
+  ProjectsService
+} from '@my-company-frontend/shared';
 
 export const projectRoutes: Routes = [
   {
@@ -30,7 +34,7 @@ export const projectRoutes: Routes = [
             component: ProjectsDetailComponent,
             data: {
               breadcrumb: 'detail'
-          },
+            },
             canActivate: [AuthGuard],
             children: [
               {
@@ -39,7 +43,7 @@ export const projectRoutes: Routes = [
                 data: {
                   breadcrumb: 'edit'
                 },
-                canActivate: [AuthGuard, AdminAuthGuard],
+                canActivate: [AuthGuard, AdminAuthGuard]
               },
               {
                 path: 'action/activate',
@@ -47,7 +51,7 @@ export const projectRoutes: Routes = [
                 data: {
                   breadcrumb: 'activate'
                 },
-                canActivate: [AuthGuard, AdminAuthGuard],
+                canActivate: [AuthGuard, AdminAuthGuard]
               },
               {
                 path: 'action/deactivate',
@@ -55,7 +59,7 @@ export const projectRoutes: Routes = [
                 data: {
                   breadcrumb: 'deactivate'
                 },
-                canActivate: [AuthGuard, AdminAuthGuard],
+                canActivate: [AuthGuard, AdminAuthGuard]
               }
             ]
           },
@@ -64,8 +68,8 @@ export const projectRoutes: Routes = [
             component: ProjectsNewComponent,
             data: {
               breadcrumb: 'new'
-          },
-            canActivate: [AuthGuard, AdminAuthGuard],
+            },
+            canActivate: [AuthGuard, AdminAuthGuard]
           }
         ]
       }
@@ -93,4 +97,4 @@ export const projectRoutes: Routes = [
   ],
   providers: [ProjectsService]
 })
-export class ProjectsModule { }
+export class ProjectsModule {}

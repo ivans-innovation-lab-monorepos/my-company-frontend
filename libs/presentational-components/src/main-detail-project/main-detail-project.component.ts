@@ -7,14 +7,11 @@ import { ProjectModel } from '@my-company-frontend/shared';
   styleUrls: ['./main-detail-project.component.scss']
 })
 export class MainDetailProjectComponent implements OnInit {
-
   @Input() project: ProjectModel;
   @Input() editRouterLinkUrl: string;
   @Input() activateRouterLinkUrl: string;
   @Input() deactivateRouterLinkUrl: string;
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

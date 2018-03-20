@@ -9,13 +9,18 @@ describe('ProjectsComponent', () => {
   let component: ProjectsComponent;
   let fixture: ComponentFixture<ProjectsComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ProjectsComponent ],
-      imports: [RouterTestingModule, BrowserAnimationsModule, PresentationalComponentsModule]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        declarations: [ProjectsComponent],
+        imports: [
+          RouterTestingModule,
+          BrowserAnimationsModule,
+          PresentationalComponentsModule
+        ]
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ProjectsComponent);

@@ -1,0 +1,31 @@
+<app-main-detail title="User detail">
+  <mat-tab-group>
+    <mat-tab label="Properties">
+      <mat-list class="app-list" *ngIf="user">
+        <mat-list-item>
+          First Name: {{user.firstName}}
+        </mat-list-item>
+        <mat-list-item>
+          Last Name: {{user.lastName}}
+        </mat-list-item>
+        <mat-list-item>
+          Username: {{user.username}}
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <h3 matSubheader>Roles</h3>
+        <mat-list-item *ngFor="let role of user?.roles">
+          {{role?.roleName}}
+        </mat-list-item>
+      </mat-list>
+    </mat-tab>
+    <mat-tab label="Actions">
+      <mat-nav-list>
+        <a mat-list-item [routerLink]="editRouterLinkUrl">
+          <mat-icon mat-list-icon>mode_edit</mat-icon>
+          <span mat-line>Edit</span>
+          <span mat-line>Update user</span>
+        </a>
+      </mat-nav-list>
+    </mat-tab>
+  </mat-tab-group>
+</app-main-detail>

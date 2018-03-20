@@ -1,9 +1,12 @@
 ///<reference path="../../../../node_modules/@angular/core/src/metadata/directives.d.ts"/>
 import { Component, OnInit } from '@angular/core';
-import {Router, ActivatedRoute, Params} from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { EventManager, ProjectModel, ProjectsService } from '@my-company-frontend/shared';
-
+import {
+  EventManager,
+  ProjectModel,
+  ProjectsService
+} from '@my-company-frontend/shared';
 
 @Component({
   selector: 'app-projects-edit',
@@ -11,7 +14,6 @@ import { EventManager, ProjectModel, ProjectsService } from '@my-company-fronten
   styleUrls: ['./projects-edit.component.scss']
 })
 export class ProjectsEditComponent implements OnInit {
-
   form: FormGroup;
   isSaving: Boolean;
   project: ProjectModel;
@@ -26,10 +28,10 @@ export class ProjectsEditComponent implements OnInit {
     private eventManager: EventManager
   ) {
     this.form = fb.group({
-      'name': ['', Validators.required],
-      'repoUrl': ['', Validators.required],
-      'siteUrl': ['', Validators.required],
-      'description': ['', Validators.required]
+      name: ['', Validators.required],
+      repoUrl: ['', Validators.required],
+      siteUrl: ['', Validators.required],
+      description: ['', Validators.required]
     });
   }
 
@@ -43,30 +45,34 @@ export class ProjectsEditComponent implements OnInit {
   }
 
   private populateProjectForm(id: string): void {
-    this.projectsService.getProject(id).subscribe(
-      project => {
-         this.form.reset({
-           'name': project.name,
-           'repoUrl': project.repoUrl,
-           'siteUrl': project.siteUrl,
-           'description': project.description,
-           }
-           );
-      },
-      error => this.errorMessage = <any>error);
+    this.projectsService.getProject(id).subscribe(project => {
+      this.form.reset({
+        name: project.name,
+        repoUrl: project.repoUrl,
+        siteUrl: project.siteUrl,
+        description: project.description
+      });
+    }, error => (this.errorMessage = <any>error));
   }
 
-  onSubmit({ value, valid }: { value: ProjectModel, valid: boolean }) {
-    this.projectsService.updateProject(this.projectId, value).subscribe(response => this.onSaveSuccess(response), () => this.onSaveError());
+  onSubmit({ value, valid }: { value: ProjectModel; valid: boolean }) {
+    this.projectsService
+      .updateProject(this.projectId, value)
+      .subscribe(
+        response => this.onSaveSuccess(response),
+        () => this.onSaveError()
+      );
   }
 
   private onSaveSuccess(result) {
-    this.eventManager.broadcast({ name: 'projectListModification', content: 'OK' });
+    this.eventManager.broadcast({
+      name: 'projectListModification',
+      content: 'OK'
+    });
     this.isSaving = false;
   }
 
   private onSaveError() {
     this.isSaving = false;
   }
-
 }

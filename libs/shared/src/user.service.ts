@@ -1,13 +1,10 @@
-import {Injectable} from '@angular/core';
-import {JwtHelperService} from '@auth0/angular-jwt';
-import {TOKEN_NAME} from './auth.constant';
-
+import { Injectable } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { TOKEN_NAME } from './auth.constant';
 
 @Injectable()
 export class UserService {
-
-  constructor(private jwtHelper: JwtHelperService) {
-  }
+  constructor(private jwtHelper: JwtHelperService) {}
 
   public login(accessToken: string) {
     localStorage.setItem(TOKEN_NAME, accessToken);
@@ -19,8 +16,13 @@ export class UserService {
 
   public isAdminUser(): boolean {
     if (localStorage.getItem(TOKEN_NAME)) {
-      const decodedToken = this.jwtHelper.decodeToken(localStorage.getItem(TOKEN_NAME));
-      return decodedToken.authorities && decodedToken.authorities.some(el => el === 'ADMIN_USER');
+      const decodedToken = this.jwtHelper.decodeToken(
+        localStorage.getItem(TOKEN_NAME)
+      );
+      return (
+        decodedToken.authorities &&
+        decodedToken.authorities.some(el => el === 'ADMIN_USER')
+      );
     } else {
       return false;
     }
@@ -35,9 +37,9 @@ export class UserService {
   }
 
   public isTokenExpired(): boolean {
-    return (localStorage.getItem(TOKEN_NAME) == null || this.jwtHelper.isTokenExpired(localStorage.getItem(TOKEN_NAME)));
-
+    return (
+      localStorage.getItem(TOKEN_NAME) == null ||
+      this.jwtHelper.isTokenExpired(localStorage.getItem(TOKEN_NAME))
+    );
   }
 }
-
-

@@ -10,7 +10,6 @@ import { ProjectModel, ProjectsService } from '@my-company-frontend/shared';
   styleUrls: ['./projects-detail.component.scss']
 })
 export class ProjectsDetailComponent implements OnInit {
-
   project: ProjectModel;
   errorMessage: string;
   navigated = false;
@@ -19,7 +18,7 @@ export class ProjectsDetailComponent implements OnInit {
     private projectsService: ProjectsService,
     private route: ActivatedRoute,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.route.params.forEach((params: Params) => {
@@ -35,8 +34,11 @@ export class ProjectsDetailComponent implements OnInit {
   }
 
   private getProject(id: string): void {
-    this.projectsService.getProject(id).subscribe(
-      project => this.project = project,
-      error => this.errorMessage = <any>error);
+    this.projectsService
+      .getProject(id)
+      .subscribe(
+        project => (this.project = project),
+        error => (this.errorMessage = <any>error)
+      );
   }
 }

@@ -31,7 +31,13 @@ export class BlogService {
     size: string
   ): Observable<BlogsModel> {
     return this.http
-      .get('http://localhost:8080/api/blogposts' + '?page=' + page + '&size=' + size)
+      .get(
+        'http://localhost:8080/api/blogposts' +
+          '?page=' +
+          page +
+          '&size=' +
+          size
+      )
       .map(this.extractListData);
   }
 
@@ -41,7 +47,10 @@ export class BlogService {
   }
 
   public addBlogPost(blogPost: BlogModel): Observable<any> {
-    return this.http.post('http://localhost:8080/api/blogpostcommands', blogPost);
+    return this.http.post(
+      'http://localhost:8080/api/blogpostcommands',
+      blogPost
+    );
   }
 
   public publishBlogPost(id: string, publishAt: Date): Observable<any> {

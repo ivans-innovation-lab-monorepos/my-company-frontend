@@ -9,13 +9,18 @@ describe('TeamComponent', () => {
   let component: TeamComponent;
   let fixture: ComponentFixture<TeamComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ TeamComponent ],
-      imports: [RouterTestingModule, BrowserAnimationsModule, PresentationalComponentsModule]
+  beforeEach(
+    async(() => {
+      TestBed.configureTestingModule({
+        declarations: [TeamComponent],
+        imports: [
+          RouterTestingModule,
+          BrowserAnimationsModule,
+          PresentationalComponentsModule
+        ]
+      }).compileComponents();
     })
-    .compileComponents();
-  }));
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TeamComponent);

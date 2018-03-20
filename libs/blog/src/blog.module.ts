@@ -16,7 +16,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PresentationalComponentsModule } from '@my-company-frontend/presentational-components';
 import { RouterModule, Routes } from '@angular/router';
 import { JwtHelperService, JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
-import { AuthGuard, TOKEN_NAME, AdminAuthGuard, EventManager, UserService, BlogService } from '@my-company-frontend/shared';
+import {
+  AuthGuard,
+  TOKEN_NAME,
+  AdminAuthGuard,
+  EventManager,
+  UserService,
+  BlogService
+} from '@my-company-frontend/shared';
 
 function jwtOptionsFactory() {
   return {
@@ -24,7 +31,11 @@ function jwtOptionsFactory() {
       return localStorage.getItem(TOKEN_NAME);
     },
     throwNoTokenError: false,
-    whitelistedDomains: ['localhost:8080', 'stage-my-company-monolith.cfapps.io', 'prod-my-company-monolith.cfapps.io']
+    whitelistedDomains: [
+      'localhost:8080',
+      'stage-my-company-monolith.cfapps.io',
+      'prod-my-company-monolith.cfapps.io'
+    ]
   };
 }
 
@@ -90,7 +101,7 @@ export const blogRoutes: Routes = [
     JwtModule.forRoot({
       jwtOptionsProvider: {
         provide: JWT_OPTIONS,
-        useFactory: jwtOptionsFactory,
+        useFactory: jwtOptionsFactory
       }
     })
   ],
@@ -102,7 +113,13 @@ export const blogRoutes: Routes = [
     BlogPublishComponent,
     BlogUnPublishComponent
   ],
-  providers: [EventManager, BlogService, AuthGuard, AdminAuthGuard, UserService, JwtHelperService]
-  
+  providers: [
+    EventManager,
+    BlogService,
+    AuthGuard,
+    AdminAuthGuard,
+    UserService,
+    JwtHelperService
+  ]
 })
 export class BlogModule {}

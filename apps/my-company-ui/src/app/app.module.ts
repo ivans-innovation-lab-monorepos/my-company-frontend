@@ -5,17 +5,25 @@ import { NxModule } from '@nrwl/nx';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { PresentationalComponentsModule } from '@my-company-frontend/presentational-components';
-import { MatSidenavModule, MatInputModule, MatCardModule, MatButtonModule } from '@angular/material';
+import {
+  MatSidenavModule,
+  MatInputModule,
+  MatCardModule,
+  MatButtonModule
+} from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BreadcrumbsModule } from 'ng2-breadcrumbs';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
-import { AuthenticationService, ProjectModel } from '@my-company-frontend/shared';
+import {
+  AuthenticationService,
+  ProjectModel
+} from '@my-company-frontend/shared';
 import { projectRoutes, ProjectsModule } from '@my-company-frontend/projects';
 import { teamRoutes, TeamModule } from '@my-company-frontend/team';
 import { blogRoutes, BlogModule } from '@my-company-frontend/blog';
-
+import { usersRoutes, UsersModule } from '@my-company-frontend/users';
 
 const routes: Routes = [
   {
@@ -27,29 +35,36 @@ const routes: Routes = [
     path: 'login',
     data: {
       breadcrumb: 'Login'
-  },
+    },
     component: LoginComponent
   },
-  { 
-    path: 'blog', 
+  {
+    path: 'blog',
     children: blogRoutes,
     data: {
       breadcrumb: 'blog'
-    },
+    }
   },
-  { 
-    path: 'projects', 
+  {
+    path: 'projects',
     children: projectRoutes,
     data: {
       breadcrumb: 'projects'
-    },
+    }
   },
-  { 
-    path: 'teams', 
+  {
+    path: 'teams',
     children: teamRoutes,
     data: {
       breadcrumb: 'teams'
-    },
+    }
+  },
+  {
+    path: 'users',
+    children: usersRoutes,
+    data: {
+      breadcrumb: 'users'
+    }
   }
 ];
 
@@ -60,6 +75,7 @@ const routes: Routes = [
     BlogModule,
     ProjectsModule,
     TeamModule,
+    UsersModule,
     ReactiveFormsModule,
     FormsModule,
     BreadcrumbsModule,

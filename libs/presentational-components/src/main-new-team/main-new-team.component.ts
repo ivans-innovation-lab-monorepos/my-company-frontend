@@ -8,16 +8,17 @@ import { TeamModel } from '@my-company-frontend/shared';
   styleUrls: ['./main-new-team.component.scss']
 })
 export class MainNewTeamComponent implements OnInit {
-
   @Input() form: FormGroup;
-  @Output() formSubmit: EventEmitter< { value: TeamModel, valid: boolean } > = new EventEmitter();
-  constructor() { }
+  @Output()
+  formSubmit: EventEmitter<{
+    value: TeamModel;
+    valid: boolean;
+  }> = new EventEmitter();
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   submit(event) {
     this.formSubmit.emit(event);
   }
-
 }

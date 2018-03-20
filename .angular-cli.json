@@ -92,6 +92,13 @@
       "tags": []
     },
     {
+      "name": "users",
+      "root": "libs/users/src",
+      "test": "../../../test.js",
+      "appRoot": "",
+      "tags": []
+    },
+    {
       "name": "$workspaceRoot",
       "root": ".",
       "appRoot": ""

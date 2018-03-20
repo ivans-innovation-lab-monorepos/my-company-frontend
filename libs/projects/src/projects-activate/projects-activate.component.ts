@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { EventManager, ProjectsService, ProjectModel } from '@my-company-frontend/shared';
-
+import {
+  EventManager,
+  ProjectsService,
+  ProjectModel
+} from '@my-company-frontend/shared';
 
 @Component({
   selector: 'app-projects-activate',
@@ -10,7 +13,6 @@ import { EventManager, ProjectsService, ProjectModel } from '@my-company-fronten
   styleUrls: ['./projects-activate.component.scss']
 })
 export class ProjectsActivateComponent implements OnInit {
-
   form: FormGroup;
   isSaving: Boolean;
   projectId: string;
@@ -22,8 +24,7 @@ export class ProjectsActivateComponent implements OnInit {
     private fb: FormBuilder,
     private eventManager: EventManager
   ) {
-    this.form = fb.group({
-    });
+    this.form = fb.group({});
   }
 
   ngOnInit() {
@@ -34,17 +35,24 @@ export class ProjectsActivateComponent implements OnInit {
     });
   }
 
-  onSubmit({ value, valid }: { value: ProjectModel, valid: boolean }) {
-    this.projectsService.activateProject(this.projectId).subscribe(response => this.onSaveSuccess(response), () => this.onSaveError());
+  onSubmit({ value, valid }: { value: ProjectModel; valid: boolean }) {
+    this.projectsService
+      .activateProject(this.projectId)
+      .subscribe(
+        response => this.onSaveSuccess(response),
+        () => this.onSaveError()
+      );
   }
 
   private onSaveSuccess(result) {
-    this.eventManager.broadcast({ name: 'projectListModification', content: 'OK' });
+    this.eventManager.broadcast({
+      name: 'projectListModification',
+      content: 'OK'
+    });
     this.isSaving = false;
   }
 
   private onSaveError() {
     this.isSaving = false;
   }
-
 }

@@ -8,7 +8,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { PresentationalComponentsModule } from '@my-company-frontend/presentational-components';
-import { AuthGuard, AdminAuthGuard, TeamsService } from '@my-company-frontend/shared';
+import {
+  AuthGuard,
+  AdminAuthGuard,
+  TeamsService
+} from '@my-company-frontend/shared';
 
 export const teamRoutes: Routes = [
   {
@@ -26,7 +30,7 @@ export const teamRoutes: Routes = [
             component: TeamDetailComponent,
             data: {
               breadcrumb: 'detail'
-          },
+            },
             canActivate: [AuthGuard]
           },
           {
@@ -34,8 +38,8 @@ export const teamRoutes: Routes = [
             component: TeamNewComponent,
             data: {
               breadcrumb: 'new'
-          },
-            canActivate: [AuthGuard, AdminAuthGuard],
+            },
+            canActivate: [AuthGuard, AdminAuthGuard]
           }
         ]
       }
@@ -51,7 +55,12 @@ export const teamRoutes: Routes = [
     ReactiveFormsModule,
     BrowserAnimationsModule
   ],
-  declarations: [TeamComponent, TeamListComponent, TeamNewComponent, TeamDetailComponent],
+  declarations: [
+    TeamComponent,
+    TeamListComponent,
+    TeamNewComponent,
+    TeamDetailComponent
+  ],
   providers: [TeamsService]
 })
-export class TeamModule { }
+export class TeamModule {}

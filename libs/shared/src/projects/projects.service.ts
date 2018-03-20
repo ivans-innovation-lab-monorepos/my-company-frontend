@@ -1,16 +1,14 @@
-import {HttpClient} from '@angular/common/http';
-import {Injectable} from '@angular/core';
-import {Response} from '@angular/http';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Response } from '@angular/http';
 import 'rxjs/add/operator/map';
-import {Observable} from 'rxjs/Observable';
-import {ProjectModel} from './project.model';
-import {ProjectsModel} from './projects.model';
+import { Observable } from 'rxjs/Observable';
+import { ProjectModel } from './project.model';
+import { ProjectsModel } from './projects.model';
 
 @Injectable()
 export class ProjectsService {
-
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   private extractListData(res) {
     const projects: ProjectsModel = new ProjectsModel();
@@ -24,11 +22,20 @@ export class ProjectsService {
   }
 
   public getProjects(): Observable<ProjectsModel> {
-    return this.http.get('http://localhost:8080/api/projects').map(this.extractListData);
+    return this.http
+      .get('http://localhost:8080/api/projects')
+      .map(this.extractListData);
   }
 
-  public getProjectsByParams(page: string, size: string): Observable<ProjectsModel> {
-    return this.http.get('http://localhost:8080/api/projects' + '?page=' + page + '&size=' + size).map(this.extractListData);
+  public getProjectsByParams(
+    page: string,
+    size: string
+  ): Observable<ProjectsModel> {
+    return this.http
+      .get(
+        'http://localhost:8080/api/projects' + '?page=' + page + '&size=' + size
+      )
+      .map(this.extractListData);
   }
 
   public getProject(id: string): Observable<ProjectModel> {
@@ -40,7 +47,10 @@ export class ProjectsService {
     return this.http.post('http://localhost:8080/api/projectcommands', project);
   }
 
-  public updateProject(projectId: string, project: ProjectModel): Observable<any> {
+  public updateProject(
+    projectId: string,
+    project: ProjectModel
+  ): Observable<any> {
     const url = `http://localhost:8080/api/projectcommands/${projectId}/updatecommand`;
     return this.http.post(url, project);
   }

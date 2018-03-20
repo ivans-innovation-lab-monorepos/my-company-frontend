@@ -23,10 +23,14 @@ import {
 import { BlogDetailComponent } from './blog-detail.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { EventManager } from '@angular/platform-browser';
-import { UserService, AuthGuard, AdminAuthGuard, AuthenticationService, BlogService } from '@my-company-frontend/shared';
+import {
+  UserService,
+  AuthGuard,
+  AdminAuthGuard,
+  AuthenticationService,
+  BlogService
+} from '@my-company-frontend/shared';
 import { PresentationalComponentsModule } from '@my-company-frontend/presentational-components';
-
-
 
 describe('BlogDetailComponent', () => {
   let component: BlogDetailComponent;

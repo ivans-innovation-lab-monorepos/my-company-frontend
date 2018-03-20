@@ -8,7 +8,11 @@ import {
   FormControl,
   ValidationErrors
 } from '@angular/forms';
-import { EventManager, BlogService, BlogModel } from '@my-company-frontend/shared';
+import {
+  EventManager,
+  BlogService,
+  BlogModel
+} from '@my-company-frontend/shared';
 
 @Component({
   selector: 'app-blog-new',

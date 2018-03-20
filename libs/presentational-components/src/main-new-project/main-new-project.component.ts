@@ -8,16 +8,17 @@ import { ProjectModel } from '@my-company-frontend/shared';
   styleUrls: ['./main-new-project.component.scss']
 })
 export class MainNewProjectComponent implements OnInit {
-
   @Input() form: FormGroup;
-  @Output() formSubmit: EventEmitter< { value: ProjectModel, valid: boolean } > = new EventEmitter();
-  constructor() { }
+  @Output()
+  formSubmit: EventEmitter<{
+    value: ProjectModel;
+    valid: boolean;
+  }> = new EventEmitter();
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   submit(event) {
     this.formSubmit.emit(event);
   }
-
 }

@@ -7,11 +7,8 @@ import { TeamModel } from '@my-company-frontend/shared';
   styleUrls: ['./main-detail-team.component.scss']
 })
 export class MainDetailTeamComponent implements OnInit {
-
   @Input() team: TeamModel;
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

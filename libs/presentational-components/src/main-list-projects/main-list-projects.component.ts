@@ -8,16 +8,14 @@ import { ProjectsDataSource } from '@my-company-frontend/shared';
   styleUrls: ['./main-list-projects.component.scss']
 })
 export class MainListProjectsComponent implements OnInit {
-
   @Input() dataSource: ProjectsDataSource;
   @Input() displayedColumns;
-  @Output() paginatorPageEvent: EventEmitter<PageEvent> = new EventEmitter<PageEvent>();
-  constructor() { }
-  ngOnInit() {
-  }
+  @Output()
+  paginatorPageEvent: EventEmitter<PageEvent> = new EventEmitter<PageEvent>();
+  constructor() {}
+  ngOnInit() {}
 
   pageChanged(event: PageEvent) {
     this.paginatorPageEvent.emit(event);
   }
-
 }

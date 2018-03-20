@@ -43,6 +43,10 @@ import { MainDetailProjectComponent } from '@my-company-frontend/presentational-
 import { MainDetailTeamComponent } from '@my-company-frontend/presentational-components/src/main-detail-team/main-detail-team.component';
 import { MainListTeamComponent } from '@my-company-frontend/presentational-components/src/main-list-team/main-list-team.component';
 import { MainNewTeamComponent } from '@my-company-frontend/presentational-components/src/main-new-team/main-new-team.component';
+import { MainEditUserComponent } from '@my-company-frontend/presentational-components/src/main-edit-user/main-edit-user.component';
+import { MainDetailUserComponent } from '@my-company-frontend/presentational-components/src/main-detail-user/main-detail-user.component';
+import { MainListUsersComponent } from '@my-company-frontend/presentational-components/src/main-list-users/main-list-users.component';
+import { MainNewUserComponent } from '@my-company-frontend/presentational-components/src/main-new-user/main-new-user.component';
 
 @NgModule({
   imports: [
@@ -89,7 +93,11 @@ import { MainNewTeamComponent } from '@my-company-frontend/presentational-compon
     MainEditProjectComponent,
     MainDetailTeamComponent,
     MainListTeamComponent,
-    MainNewTeamComponent
+    MainNewTeamComponent,
+    MainEditUserComponent,
+    MainDetailUserComponent,
+    MainListUsersComponent,
+    MainNewUserComponent
   ],
   exports: [
     SideMenuComponent,
@@ -108,7 +116,15 @@ import { MainNewTeamComponent } from '@my-company-frontend/presentational-compon
     MainEditProjectComponent,
     MainDetailTeamComponent,
     MainListTeamComponent,
-    MainNewTeamComponent
+    MainNewTeamComponent,
+    MainEditProjectComponent,
+    MainDetailTeamComponent,
+    MainListTeamComponent,
+    MainNewTeamComponent,
+    MainEditUserComponent,
+    MainDetailUserComponent,
+    MainListUsersComponent,
+    MainNewUserComponent
   ]
 })
 export class PresentationalComponentsModule {}

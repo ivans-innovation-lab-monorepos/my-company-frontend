@@ -8,8 +8,6 @@ import { TeamModel, TeamsService } from '@my-company-frontend/shared';
   styleUrls: ['./team-detail.component.scss']
 })
 export class TeamDetailComponent implements OnInit {
-
-
   team: TeamModel;
   errorMessage: string;
   navigated = false;
@@ -18,7 +16,7 @@ export class TeamDetailComponent implements OnInit {
     private teamsService: TeamsService,
     private route: ActivatedRoute,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.route.params.forEach((params: Params) => {
@@ -34,8 +32,11 @@ export class TeamDetailComponent implements OnInit {
   }
 
   private getTeam(id: string): void {
-    this.teamsService.getTeam(id).subscribe(
-      team => this.team = team,
-      error => this.errorMessage = <any>error);
+    this.teamsService
+      .getTeam(id)
+      .subscribe(
+        team => (this.team = team),
+        error => (this.errorMessage = <any>error)
+      );
   }
 }

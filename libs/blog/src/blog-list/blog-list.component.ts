@@ -3,9 +3,13 @@ import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs/Observable';
 import { PageEvent } from '@angular/material';
 import { Subject } from 'rxjs/Subject';
-import { PageModel, EventManager, BlogService, BlogModel, BlogDataSource } from '@my-company-frontend/shared';
-
-
+import {
+  PageModel,
+  EventManager,
+  BlogService,
+  BlogModel,
+  BlogDataSource
+} from '@my-company-frontend/shared';
 
 @Component({
   selector: 'app-blog-list',
