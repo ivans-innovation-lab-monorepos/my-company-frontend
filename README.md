@@ -1,4 +1,4 @@
-# my-company-frontend
+# my-company-frontend [![CircleCI](https://circleci.com/gh/ivans-innovation-lab-monorepos/my-company-frontend.svg?style=svg)](https://circleci.com/gh/ivans-innovation-lab-monorepos/my-company-frontend)
 
 This **frontend** application/s is a mono-repo version of the [lab (multi-repo version)](http://ivans-innovation-lab.github.io/), and represents its predecessor. It conusumes a [REST API](https://github.com/ivans-innovation-lab-monorepos/my-company-backend).
 
@@ -7,7 +7,7 @@ This **frontend** application/s is a mono-repo version of the [lab (multi-repo v
 
 Instead of having a large monolith, we have dozens of small libraries with well-defined public APIs (and an [Nx Workspace](https://nrwl.io/nx/why-a-workspace) ensures you only use your libraries’ public APIs).
 
-At this stage we have one deployment pipeline for all applications and libraries together.
+At this stage we have one [deployment pipeline](https://circleci.com/gh/ivans-innovation-lab-monorepos/my-company-frontend) for all applications and libraries together.
 
 ## Benefits
 
