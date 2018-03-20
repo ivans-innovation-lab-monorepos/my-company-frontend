@@ -11,9 +11,10 @@ import { BreadcrumbsModule } from 'ng2-breadcrumbs';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
-import { blogRoutes, BlogModule } from '@my-company-frontend/blog';
 import { AuthenticationService, ProjectModel } from '@my-company-frontend/shared';
 import { projectRoutes, ProjectsModule } from '@my-company-frontend/projects';
+import { teamRoutes, TeamModule } from '@my-company-frontend/team';
+import { blogRoutes, BlogModule } from '@my-company-frontend/blog';
 
 
 const routes: Routes = [
@@ -42,6 +43,13 @@ const routes: Routes = [
     data: {
       breadcrumb: 'projects'
     },
+  },
+  { 
+    path: 'teams', 
+    children: teamRoutes,
+    data: {
+      breadcrumb: 'teams'
+    },
   }
 ];
 
@@ -51,6 +59,7 @@ const routes: Routes = [
     HttpClientModule,
     BlogModule,
     ProjectsModule,
+    TeamModule,
     ReactiveFormsModule,
     FormsModule,
     BreadcrumbsModule,

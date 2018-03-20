@@ -40,6 +40,9 @@ import { MainEditProjectComponent } from '@my-company-frontend/presentational-co
 import { MainNewProjectComponent } from '@my-company-frontend/presentational-components/src/main-new-project/main-new-project.component';
 import { MainListProjectsComponent } from '@my-company-frontend/presentational-components/src/main-list-projects/main-list-projects.component';
 import { MainDetailProjectComponent } from '@my-company-frontend/presentational-components/src/main-detail-project/main-detail-project.component';
+import { MainDetailTeamComponent } from '@my-company-frontend/presentational-components/src/main-detail-team/main-detail-team.component';
+import { MainListTeamComponent } from '@my-company-frontend/presentational-components/src/main-list-team/main-list-team.component';
+import { MainNewTeamComponent } from '@my-company-frontend/presentational-components/src/main-new-team/main-new-team.component';
 
 @NgModule({
   imports: [
@@ -83,7 +86,10 @@ import { MainDetailProjectComponent } from '@my-company-frontend/presentational-
     MainDetailProjectComponent,
     MainListProjectsComponent,
     MainNewProjectComponent,
-    MainEditProjectComponent
+    MainEditProjectComponent,
+    MainDetailTeamComponent,
+    MainListTeamComponent,
+    MainNewTeamComponent
   ],
   exports: [
     SideMenuComponent,
@@ -99,7 +105,10 @@ import { MainDetailProjectComponent } from '@my-company-frontend/presentational-
     MainDetailProjectComponent,
     MainListProjectsComponent,
     MainNewProjectComponent,
-    MainEditProjectComponent
+    MainEditProjectComponent,
+    MainDetailTeamComponent,
+    MainListTeamComponent,
+    MainNewTeamComponent
   ]
 })
 export class PresentationalComponentsModule {}

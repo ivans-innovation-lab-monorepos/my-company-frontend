@@ -7,6 +7,8 @@
 // Import our custom theme
 @import 'theme';
 @import '../../../../libs/presentational-components/src/main-list-blog/main-list-blog.component.theme';
+@import '../../../../libs/presentational-components/src/main-list-projects/main-list-projects.component.theme';
+@import '../../../../libs/presentational-components/src/main-list-team/main-list-team.component.theme';
 @import '../../../../libs/presentational-components/src/side-menu-item/side-menu-item.component.theme';
 @import '../../../../libs/presentational-components/src/header/header.component.theme';
 @import '../../../../libs/presentational-components/src/footer/footer.component.theme';
@@ -19,6 +21,8 @@
 // You only have to add additional componenets here (instead of in every theme class)
 @mixin custom-components-theme($theme) {
   @include main-list-blog-component-theme($theme);
+  @include main-list-projects-component-theme($theme);
+  @include main-list-team-component-theme($theme);
   @include side-menu-item-component-theme($theme);
   @include header-component-theme($theme);
   @include footer-component-theme($theme);

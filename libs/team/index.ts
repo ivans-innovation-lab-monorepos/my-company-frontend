@@ -1,1 +1,1 @@
-export { TeamModule } from './src/team.module';
+export * from './src/team.module';

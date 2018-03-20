@@ -14,4 +14,9 @@ export * from './src/projects/project.model';
 export * from './src/projects/projects.service';
 export * from './src/projects/projects.model';
 export * from './src/projects/projects.datasource';
-
+export { ProjectModel } from './src/team/project.model';
+export * from './src/team/member.model';
+export * from './src/team/team.model';
+export * from './src/team/teams.model';
+export * from './src/team/team.service';
+export * from './src/team/team.datasource';
