@@ -32,18 +32,14 @@ At this stage we have one deployment pipeline for all applications and libraries
 - Can lead to accepted dependencies, making it overkill to work on a small feature
   - Say some library code is designed to hit the web service, in a single workspace you know the service is available so effort might not be made to be able to run that library code with a mock service
   
-## Running instructions && development server
+## Running instructions
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) using [Nrwl Nx](https://nrwl.io/nx).
-
 
 ### Quick Start & Documentation
 
 [Watch a 5-minute video on how to get started with Nx.](http://nrwl.io/nx)
 
-### Generate your first application
-
-Run `ng generate app my-company-ui` to generate an application. When using Nx, you can create multiple applications and libraries in the same CLI workspace. Read more [here](http://nrwl.io/nx).
 
 ### Development server
 
@@ -66,7 +62,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `ng serve`.
 
-### References and further reading
+## References and further reading
 
 - https://nrwl.io/nx/why-a-workspace
 - https://blog.nrwl.io/nrwl-nx-an-open-source-toolkit-for-enterprise-angular-applications-38698e94d65
