@@ -11,11 +11,11 @@
     "deprecation": {
       "severity": "warn"
     },
-    "import-blacklist": [
-      true,
-      "rxjs",
-      "rxjs/Rx"
-    ],
+    // "import-blacklist": [
+    //   true,
+    //   "rxjs",
+    //   "rxjs/Rx"
+    // ],
     "interface-over-type-literal": true,
     "member-access": false,
     "member-ordering": [
