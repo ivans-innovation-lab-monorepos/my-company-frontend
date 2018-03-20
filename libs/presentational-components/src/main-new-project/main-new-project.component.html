@@ -1,0 +1,22 @@
+<app-main-new title="New Project">
+    <form [formGroup]="form" (ngSubmit)="submit(form)">
+        <mat-input-container floatingPlaceholder=true style="width: 100%">
+          <input matInput placeholder="Name" formControlName="name">
+        </mat-input-container>
+        <mat-input-container floatingPlaceholder=true style="width: 100%">
+          <input matInput placeholder="Repository URL" formControlName="repoUrl">
+        </mat-input-container>
+        <mat-input-container floatingPlaceholder=true style="width: 100%">
+          <input matInput placeholder="Site URL" formControlName="siteUrl">
+        </mat-input-container>
+        <mat-input-container floatingPlaceholder=true style="width: 100%">
+          <input matInput placeholder="Category" formControlName="category">
+        </mat-input-container>
+        <mat-input-container floatingPlaceholder=true style="width: 100%">
+          <textarea matInput placeholder="Description" formControlName="description"></textarea>
+        </mat-input-container>
+        <p>
+          <button mat-raised-button color="accent"  type="submit" [disabled]="!form.valid">Submit</button>
+        </p>
+      </form>
+</app-main-new>

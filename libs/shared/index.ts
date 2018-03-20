@@ -10,4 +10,8 @@ export * from './src/blog/blog.model';
 export * from './src/blog/blog.service';
 export * from './src/blog/blogs.model';
 export * from './src/blog/blog.datasource';
+export * from './src/projects/project.model';
+export * from './src/projects/projects.service';
+export * from './src/projects/projects.model';
+export * from './src/projects/projects.datasource';
 

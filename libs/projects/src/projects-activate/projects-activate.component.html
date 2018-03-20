@@ -1,0 +1,7 @@
+<app-main-new title="Activate Project">
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+    <p>
+      <button mat-raised-button color="accent"  type="submit" [disabled]="!form.valid">Submit</button>
+    </p>
+  </form>
+</app-main-new>

@@ -36,6 +36,10 @@ import { MainNewBlogComponent } from './main-new-blog/main-new-blog.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BreadcrumbsModule } from 'ng2-breadcrumbs';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { MainEditProjectComponent } from '@my-company-frontend/presentational-components/src/main-edit-project/main-edit-project.component';
+import { MainNewProjectComponent } from '@my-company-frontend/presentational-components/src/main-new-project/main-new-project.component';
+import { MainListProjectsComponent } from '@my-company-frontend/presentational-components/src/main-list-projects/main-list-projects.component';
+import { MainDetailProjectComponent } from '@my-company-frontend/presentational-components/src/main-detail-project/main-detail-project.component';
 
 @NgModule({
   imports: [
@@ -75,7 +79,11 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
     MainListBlogComponent,
     MainNewComponent,
     MainNewBlogComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    MainDetailProjectComponent,
+    MainListProjectsComponent,
+    MainNewProjectComponent,
+    MainEditProjectComponent
   ],
   exports: [
     SideMenuComponent,
@@ -87,7 +95,11 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
     MainListBlogComponent,
     MainNewBlogComponent,
     BreadcrumbsComponent,
-    MainNewComponent
+    MainNewComponent,
+    MainDetailProjectComponent,
+    MainListProjectsComponent,
+    MainNewProjectComponent,
+    MainEditProjectComponent
   ]
 })
 export class PresentationalComponentsModule {}

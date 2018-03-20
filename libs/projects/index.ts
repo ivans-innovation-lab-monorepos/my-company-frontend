@@ -1,1 +1,1 @@
-export { ProjectsModule } from './src/projects.module';
+export * from './src/projects.module';

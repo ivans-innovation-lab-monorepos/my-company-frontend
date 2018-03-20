@@ -1,0 +1,42 @@
+<app-main-detail title="Project detail">
+  <mat-tab-group>
+    <mat-tab label="Properties">
+      <mat-list class="app-list" *ngIf="project">
+        <mat-list-item>
+          Name: {{project.name}}
+        </mat-list-item>
+        <mat-list-item>
+          Repo URL: {{project.repoUrl}}
+        </mat-list-item>
+        <mat-list-item>
+          Site URL: {{project.siteUrl}}
+        </mat-list-item>
+        <mat-list-item>
+          Description: {{project.description}}
+        </mat-list-item>
+        <mat-list-item>
+          Category: {{project.category}}
+        </mat-list-item>
+      </mat-list>
+    </mat-tab>
+    <mat-tab label="Actions">
+      <mat-nav-list>
+        <a mat-list-item [routerLink]="editRouterLinkUrl">
+          <mat-icon mat-list-icon>mode_edit</mat-icon>
+          <span mat-line>Edit</span>
+          <span mat-line>Update your project by changing name, URLs or a description</span>
+        </a>
+        <a mat-list-item [routerLink]="activateRouterLinkUrl">
+          <mat-icon mat-list-icon>thumb_up</mat-icon>
+          <span mat-line>Activate</span>
+          <span mat-line>Make your project active. This will enable you to link it to a specific team.</span>
+        </a>
+        <a mat-list-item [routerLink]="deactivateRouterLinkUrl">
+          <mat-icon mat-list-icon>thumb_down</mat-icon>
+          <span mat-line>Deactivate</span>
+          <span mat-line>Make your project in-active. This will disable you to manage your project further.</span>
+        </a>
+      </mat-nav-list>
+    </mat-tab>
+  </mat-tab-group>
+</app-main-detail>

@@ -12,7 +12,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { blogRoutes, BlogModule } from '@my-company-frontend/blog';
-import { AuthenticationService } from '@my-company-frontend/shared';
+import { AuthenticationService, ProjectModel } from '@my-company-frontend/shared';
+import { projectRoutes, ProjectsModule } from '@my-company-frontend/projects';
 
 
 const routes: Routes = [
@@ -34,6 +35,13 @@ const routes: Routes = [
     data: {
       breadcrumb: 'blog'
     },
+  },
+  { 
+    path: 'projects', 
+    children: projectRoutes,
+    data: {
+      breadcrumb: 'projects'
+    },
   }
 ];
 
@@ -42,6 +50,7 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     BlogModule,
+    ProjectsModule,
     ReactiveFormsModule,
     FormsModule,
     BreadcrumbsModule,
