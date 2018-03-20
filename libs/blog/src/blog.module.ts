@@ -12,16 +12,11 @@ import { BlogComponent } from './blog.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogNewComponent } from './blog-new/blog-new.component';
-import { BlogService } from './shared/blog.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PresentationalComponentsModule } from '@my-company-frontend/presentational-components';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from '@my-company-frontend/shared/src/guards/auth-guard.service';
-import { AdminAuthGuard } from '@my-company-frontend/shared/src/guards/admin-auth-guard.service';
-import { UserService } from '@my-company-frontend/shared/src/user.service';
 import { JwtHelperService, JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
-import { TOKEN_NAME } from '@my-company-frontend/shared/src/auth.constant';
-import { EventManager } from '@my-company-frontend/shared/src/event-manager.service';
+import { AuthGuard, TOKEN_NAME, AdminAuthGuard, EventManager, UserService, BlogService } from '@my-company-frontend/shared';
 
 function jwtOptionsFactory() {
   return {
@@ -37,9 +32,6 @@ export const blogRoutes: Routes = [
   {
     path: '',
     component: BlogComponent,
-    data: {
-      breadcrumb: 'blog'
-    },
     canActivate: [AuthGuard],
     children: [
       {

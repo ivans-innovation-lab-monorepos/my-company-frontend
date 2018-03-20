@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PageEvent } from '@angular/material';
-import { BlogDataSource } from '@my-company-frontend/blog/src/blog-list/blog-list.component';
+import { BlogDataSource } from '@my-company-frontend/shared';
 
 @Component({
   selector: 'app-main-list-blog',

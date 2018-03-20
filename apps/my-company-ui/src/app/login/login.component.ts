@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthenticationService } from '@my-company-frontend/shared/src/authentication.service';
-import { UserService } from '@my-company-frontend/shared/src/user.service';
+import { AuthenticationService, UserService } from '@my-company-frontend/shared';
+
 
 
 

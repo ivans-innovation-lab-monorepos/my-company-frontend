@@ -21,14 +21,11 @@ import {
 } from '@angular/material';
 
 import { BlogDetailComponent } from './blog-detail.component';
-import { BlogService } from '../shared/blog.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { EventManager } from '@angular/platform-browser';
-import { UserService } from '@my-company-frontend/shared/src/user.service';
-import { AuthenticationService } from '@my-company-frontend/shared/src/authentication.service';
-import { AuthGuard } from '@my-company-frontend/shared/src/guards/auth-guard.service';
-import { AdminAuthGuard } from '@my-company-frontend/shared/src/guards/admin-auth-guard.service';
+import { UserService, AuthGuard, AdminAuthGuard, AuthenticationService, BlogService } from '@my-company-frontend/shared';
 import { PresentationalComponentsModule } from '@my-company-frontend/presentational-components';
+
 
 
 describe('BlogDetailComponent', () => {

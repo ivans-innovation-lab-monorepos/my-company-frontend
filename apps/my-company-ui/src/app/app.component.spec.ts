@@ -15,11 +15,8 @@ import { JWT_OPTIONS, JwtHelperService } from '@auth0/angular-jwt';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PresentationalComponentsModule } from '@my-company-frontend/presentational-components';
-import { TOKEN_NAME } from '@my-company-frontend/shared/src/auth.constant';
-import { UserService } from '@my-company-frontend/shared/src/user.service';
-import { AuthenticationService } from '@my-company-frontend/shared/src/authentication.service';
-import { AuthGuard } from '@my-company-frontend/shared/src/guards/auth-guard.service';
-import { AdminAuthGuard } from '@my-company-frontend/shared/src/guards/admin-auth-guard.service';
+import { TOKEN_NAME, UserService, AuthenticationService, AuthGuard, AdminAuthGuard } from '@my-company-frontend/shared';
+
 
 function jwtOptionsFactory() {
   return {

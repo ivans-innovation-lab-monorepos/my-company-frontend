@@ -3,17 +3,16 @@ import { BrowserModule, EventManager } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NxModule } from '@nrwl/nx';
 import { RouterModule, Routes } from '@angular/router';
-import { blogRoutes, BlogModule } from '@my-company-frontend/blog/src/blog.module';
-import { BlogComponent } from '@my-company-frontend/blog/src/blog.component';
 import { LoginComponent } from './login/login.component';
 import { PresentationalComponentsModule } from '@my-company-frontend/presentational-components';
 import { MatSidenavModule, MatInputModule, MatCardModule, MatButtonModule } from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BreadcrumbsModule } from 'ng2-breadcrumbs';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { AuthenticationService } from '@my-company-frontend/shared/src/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
+import { blogRoutes, BlogModule } from '@my-company-frontend/blog';
+import { AuthenticationService } from '@my-company-frontend/shared';
 
 
 const routes: Routes = [
@@ -31,7 +30,10 @@ const routes: Routes = [
   },
   { 
     path: 'blog', 
-    children: blogRoutes 
+    children: blogRoutes,
+    data: {
+      breadcrumb: 'blog'
+    },
   }
 ];
 

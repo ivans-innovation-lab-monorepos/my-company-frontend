@@ -1,15 +1,13 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { BlogService } from '../shared/blog.service';
 import {
   FormGroup,
   Validators,
   FormBuilder,
   FormControl
 } from '@angular/forms';
-import { BlogModel } from '../shared/blog.model';
-import { EventManager } from '@my-company-frontend/shared/src/event-manager.service';
+import { EventManager, BlogService, BlogModel } from '@my-company-frontend/shared';
 
 @Component({
   selector: 'app-blog-publish',

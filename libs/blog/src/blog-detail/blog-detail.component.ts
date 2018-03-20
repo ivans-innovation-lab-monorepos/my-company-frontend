@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from '../shared/blog.service';
-import { BlogModel } from '../shared/blog.model';
+
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/filter';
+import { BlogModel, BlogService } from '@my-company-frontend/shared';
 
 @Component({
   selector: 'app-blog-detail',

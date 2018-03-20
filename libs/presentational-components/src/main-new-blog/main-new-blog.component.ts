@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { BlogModel } from '@my-company-frontend/blog/src/shared/blog.model';
+import { BlogModel } from '@my-company-frontend/shared';
 
 @Component({
   selector: 'app-main-new-blog',
