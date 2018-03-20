@@ -1,0 +1,124 @@
+version: 2
+jobs:
+  build:
+    working_directory: /home/circleci/my-company
+    docker:
+      - image: circleci/node:6-browsers
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: my-company-angular-fe0-{{ checksum "package.json" }}
+
+      - run:
+          name: install-dependencies
+          command: yarn install
+
+      - save_cache:
+          key: my-company-angular-fe0-{{ checksum "package.json" }}
+          paths:
+            - ~/.cache/yarn
+            - /home/circleci/my-company/node_modules
+
+      - run:
+          name: angular-test
+          command: yarn test -- --single-run --no-progress
+
+      - run:
+          name: angular-build-stage
+          command: |
+            rm -rf dist stage
+            mkdir stage
+            yarn ng build --env=stage
+            cp -R dist/* stage
+            touch stage/Staticfile
+
+      - run:
+          name: angular-build-prod
+          command: |
+            rm -rf dist prod
+            mkdir prod
+            yarn ng build --env=prod
+            cp -R dist/* prod
+            touch prod/Staticfile
+
+
+      - persist_to_workspace:
+              root: /home/circleci/my-company/
+              paths:
+                - stage/
+                - prod/
+
+  staging:
+    docker:
+      - image: circleci/node:6-browsers
+    steps:
+      - attach_workspace:
+          at: workspace/
+      - run:
+          name: Install CloudFoundry CLI
+          command: |
+            curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
+            sudo dpkg -i cf-cli_amd64.deb
+            cf -v
+      - deploy:
+          name: Deploy to Staging - PWS CLoudFoundry
+          command: |
+            cf api https://api.run.pivotal.io
+            cf auth idugalic@gmail.com $CF_PASSWORD
+            cf target -o idugalic -s Stage
+            cd workspace/stage
+            cf push stage-my-company-angular-fe --no-start
+            cf start stage-my-company-angular-fe
+
+  production:
+    docker:
+      - image: circleci/node:6-browsers
+    steps:
+      - attach_workspace:
+          at: workspace/
+      - run:
+          name: Install CloudFoundry CLI
+          command: |
+            curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
+            sudo dpkg -i cf-cli_amd64.deb
+            cf -v
+      - deploy:
+          name: Deploy to Production - PWS CLoudFoundry
+          command: |
+            cf api https://api.run.pivotal.io
+            cf auth idugalic@gmail.com $CF_PASSWORD
+            cf target -o idugalic -s Prod
+            cd workspace/prod
+            cf push prod-my-company-angular-fe --no-start
+            cf start prod-my-company-angular-fe
+
+notify:
+  webhooks:
+  # A list of hashes representing hooks. Only the url field is supported.
+    - url: https://webhook.atomist.com/atomist/circle
+
+workflows:
+  version: 2
+  my-company-angular-fe-workflow:
+    jobs:
+       - build
+       - staging:
+           requires:
+             - build
+           filters:
+             branches:
+               only: master
+       - approve-production:
+           type: approval
+           requires:
+             - staging
+           filters:
+             branches:
+               only: master
+       - production:
+           requires:
+             - approve-production
+           filters:
+             branches:
+               only: master
