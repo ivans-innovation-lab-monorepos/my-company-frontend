@@ -1,12 +1,11 @@
 import { DataSource } from '@angular/cdk/table';
 import { Observable, Subject } from 'rxjs';
 import { PageEvent } from '@angular/material';
-import {
-  UserModel,
-  PageModel,
-  UsersService,
-  EventManager
-} from '@my-company-frontend/shared';
+import { PageModel } from '../page.model';
+import { EventManager } from '../event-manager.service';
+import { UserModel } from './user.model';
+import { UsersService } from './users.service';
+
 
 export class UsersDataSource extends DataSource<UserModel> {
   page: PageModel;

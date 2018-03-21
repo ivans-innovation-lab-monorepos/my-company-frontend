@@ -1,12 +1,11 @@
 import { DataSource } from '@angular/cdk/table';
-import {
-  BlogModel,
-  PageModel,
-  BlogService,
-  EventManager
-} from '@my-company-frontend/shared';
 import { Observable, Subject } from 'rxjs';
 import { PageEvent } from '@angular/material';
+import { PageModel } from '../page.model';
+import { EventManager } from '../event-manager.service';
+import { BlogModel } from './blog.model';
+import { BlogService } from './blog.service';
+
 
 /** ###################### Data source ########################## **/
 export class BlogDataSource extends DataSource<BlogModel> {

@@ -1,5 +1,5 @@
 import { BlogModel } from './blog.model';
-import { PageModel } from '@my-company-frontend/shared';
+import { PageModel} from '../page.model';
 
 export class BlogsModel {
   blogposts: BlogModel[];

@@ -1,5 +1,5 @@
 import { UserModel } from './user.model';
-import { PageModel } from '@my-company-frontend/shared';
+import { PageModel} from '../page.model';
 
 export class UsersModel {
   users: UserModel[];

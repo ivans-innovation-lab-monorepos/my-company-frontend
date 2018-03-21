@@ -1,5 +1,5 @@
 import { RoleModel } from './role.model';
-import { PageModel } from '@my-company-frontend/shared';
+import { PageModel} from '../page.model';
 
 export class RolesModel {
   roles: RoleModel[];

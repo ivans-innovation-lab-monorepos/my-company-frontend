@@ -36,17 +36,17 @@ import { MainNewBlogComponent } from './main-new-blog/main-new-blog.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BreadcrumbsModule } from 'ng2-breadcrumbs';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
-import { MainEditProjectComponent } from '@my-company-frontend/presentational-components/src/main-edit-project/main-edit-project.component';
-import { MainNewProjectComponent } from '@my-company-frontend/presentational-components/src/main-new-project/main-new-project.component';
-import { MainListProjectsComponent } from '@my-company-frontend/presentational-components/src/main-list-projects/main-list-projects.component';
-import { MainDetailProjectComponent } from '@my-company-frontend/presentational-components/src/main-detail-project/main-detail-project.component';
-import { MainDetailTeamComponent } from '@my-company-frontend/presentational-components/src/main-detail-team/main-detail-team.component';
-import { MainListTeamComponent } from '@my-company-frontend/presentational-components/src/main-list-team/main-list-team.component';
-import { MainNewTeamComponent } from '@my-company-frontend/presentational-components/src/main-new-team/main-new-team.component';
-import { MainEditUserComponent } from '@my-company-frontend/presentational-components/src/main-edit-user/main-edit-user.component';
-import { MainDetailUserComponent } from '@my-company-frontend/presentational-components/src/main-detail-user/main-detail-user.component';
-import { MainListUsersComponent } from '@my-company-frontend/presentational-components/src/main-list-users/main-list-users.component';
-import { MainNewUserComponent } from '@my-company-frontend/presentational-components/src/main-new-user/main-new-user.component';
+import { MainEditProjectComponent } from './main-edit-project/main-edit-project.component';
+import { MainNewProjectComponent } from './main-new-project/main-new-project.component';
+import { MainListProjectsComponent } from './main-list-projects/main-list-projects.component';
+import { MainDetailProjectComponent } from './main-detail-project/main-detail-project.component';
+import { MainDetailTeamComponent } from './main-detail-team/main-detail-team.component';
+import { MainListTeamComponent } from './main-list-team/main-list-team.component';
+import { MainNewTeamComponent } from './main-new-team/main-new-team.component';
+import { MainEditUserComponent } from './main-edit-user/main-edit-user.component';
+import { MainDetailUserComponent } from './main-detail-user/main-detail-user.component';
+import { MainListUsersComponent } from './main-list-users/main-list-users.component';
+import { MainNewUserComponent } from './main-new-user/main-new-user.component';
 
 @NgModule({
   imports: [

@@ -1,12 +1,10 @@
 import { DataSource } from '@angular/cdk/table';
 import { Observable, Subject } from 'rxjs';
 import { PageEvent } from '@angular/material';
-import {
-  ProjectModel,
-  PageModel,
-  ProjectsService,
-  EventManager
-} from '@my-company-frontend/shared';
+import { PageModel } from '../page.model';
+import { EventManager } from '../event-manager.service';
+import { ProjectModel } from './project.model';
+import { ProjectsService } from './projects.service';
 
 export class ProjectsDataSource extends DataSource<ProjectModel> {
   page: PageModel;

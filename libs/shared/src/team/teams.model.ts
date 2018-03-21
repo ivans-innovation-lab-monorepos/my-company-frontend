@@ -1,5 +1,5 @@
 import { TeamModel } from './team.model';
-import { PageModel } from '@my-company-frontend/shared';
+import { PageModel} from '../page.model';
 
 export class TeamsModel {
   teams: TeamModel[];

@@ -1,12 +1,10 @@
 import { DataSource } from '@angular/cdk/table';
 import { Observable, Subject } from 'rxjs';
 import { PageEvent } from '@angular/material';
-import {
-  PageModel,
-  TeamModel,
-  TeamsService,
-  EventManager
-} from '@my-company-frontend/shared';
+import { PageModel } from '../page.model';
+import { EventManager } from '../event-manager.service';
+import { TeamModel } from './team.model';
+import { TeamsService } from './team.service';
 
 export class TeamsDataSource extends DataSource<TeamModel> {
   page: PageModel;
