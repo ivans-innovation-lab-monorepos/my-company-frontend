@@ -9,7 +9,7 @@ Instead of having a large monolith, we have dozens of small libraries with well-
 
 At this stage we have one [deployment pipeline](https://circleci.com/gh/ivans-innovation-lab-monorepos/my-company-frontend) for all applications and libraries together.
 
-## Benefits
+## Benefits of monorepo
 
 - Unified versioning
    - Everything at that current commit works together
@@ -25,12 +25,53 @@ At this stage we have one [deployment pipeline](https://circleci.com/gh/ivans-in
 - Consistent developer experience
    - Ensures all necessary dependant code is available
 
-## Drawbacks
+## Drawbacks of monorepo
 
 - Takes work to try and limit access to parts of the code base
 - An upgrade to a lib requires a change to all implementors (can't roll out different versions side by side)
 - Can lead to accepted dependencies, making it overkill to work on a small feature
   - Say some library code is designed to hit the web service, in a single workspace you know the service is available so effort might not be made to be able to run that library code with a mock service
+
+## Architecture overview
+
+### Feature Components vs Presentational Components
+
+Feature and Presentational Component Design pattern has been called many things such as:
+
+ - Container Components vs Presentational Components
+ - Smart/Dumb Components
+ - Stateful/Stateless Components
+ 
+#### Feature components
+
+A **Feature component** is a top level component that contains all other components in our feature. This commonly is **a routed component** in Angular. Our feature components are responsible for gathering data from various services for our feature to use. If our user saves data the feature component is responsible to pass that data to our Angular Services to save the data to our server API. Feature components are very slim with the amount of application logic. We try to defer this logic to Services if possible. For this example the [`blog.component`](https://github.com/ivans-innovation-lab-monorepos/my-company-frontend/blob/master/libs/blog/src/blog.component.ts) is our Feature Component and **it is composed of many Presentational components**.
+
+#### Presentational components
+
+**Presentational Components behave like pure functions** taking in the data via @Input and emitting data via @Output. This allows the majority of our UI to not know the underlying implementation detail of where the data came from. For example a [`side-item.component`](https://github.com/ivans-innovation-lab-monorepos/my-company-frontend/blob/master/libs/presentational-components/src/side-menu-item/side-menu-item.component.ts) takes in a @Input of an item to display. This allows the `side-item.component` component to have the only responsibility of rendering the item when the data is passed to it.
+
+Many if not **most Presentational Components can be abstracted into a style guide or UI library** for the project. Using a shared style guide for an organization or project improves reusability, increases the consistency between the different views that form a web application and encourages the communication between the different teams. It can also ensure that a unified brand is used across different products. To get ideas of component design and style guide maintainability I recommend Brad Frost’s book [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/).
+
+There are downsides to this though. As the feature grows in complexity we may have a deeply nested component structure. Since presentation component events only bubble up one level at a time we will have to manually pass up to each parent component. **Introducing other sub feature components** ([`blog-list.component`](https://github.com/ivans-innovation-lab-monorepos/my-company-frontend/blob/master/libs/blog/src/blog-list/blog-list.component.ts), [`blog-detail.component`](https://github.com/ivans-innovation-lab-monorepos/my-company-frontend/blob/master/libs/blog/src/blog-detail/blog-detail.component.ts), [`blog-new.component`](https://github.com/ivans-innovation-lab-monorepos/my-company-frontend/blob/master/libs/blog/src/blog-new/blog-new.component.ts) can help elevate this. The communication between feature components is event driven, and enables loose coupling. For example a `blog-new.component` will trigger an event on successfull creation of a blog post, and `blog-list.component` is subscribed to it so it can re-fetch  and refresh a list of blog posts.
+
+Let's place components into a layout and articulate the design’s underlying content structure:
+
+##### Home template
+
+![My Company - Home](https://github.com/ivans-innovation-lab/my-company-angular-fe/raw/master/MyCompanyFE-Home.png)
+
+##### Blog post detail 'template'
+
+![My Company - Blog](https://github.com/ivans-innovation-lab/my-company-angular-fe/raw/master/MyCompanyFE-Blog.png)
+
+### Theming our custom presentational components
+
+Our application supports use of potentially unlimited number of [different themes](https://github.com/ivans-innovation-lab-monorepos/my-company-frontend/blob/master/apps/my-company-ui/src/styles/_theme.scss). This is useful in itself but these themes will only style components provided by the Angular Material library itself.
+
+We put our general layout and styling to the [`main-list-blog.component.scss`](https://github.com/ivans-innovation-lab-monorepos/my-company-frontend/blob/master/libs/presentational-components/src/main-list-blog/_main-list-blog.component.theme.scss), but we also create a new file [`main-list-blog.component.theme.scss`](https://github.com/ivans-innovation-lab/my-company-angular-fe/blob/master/src/app/presentational-components/main-list-blog/main-list-blog.component.scss) where we are using style rules which have something to do with the color. In our mixin, we retrieved all the necessary theme variables needed for the styling of our custom component.
+
+To use our custom component theme, we have to include it in the application [styles.scss](https://github.com/ivans-innovation-lab-monorepos/my-company-frontend/blob/master/apps/my-company-ui/src/styles/styles.scss) file.
+
   
 ## Running instructions
 
