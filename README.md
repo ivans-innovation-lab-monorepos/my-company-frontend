@@ -1,6 +1,6 @@
 # my-company-frontend [![CircleCI](https://circleci.com/gh/ivans-innovation-lab-monorepos/my-company-frontend.svg?style=svg)](https://circleci.com/gh/ivans-innovation-lab-monorepos/my-company-frontend)
 
-This **frontend** application/s is a mono-repo version of the [lab (multi-repo version)](http://ivans-innovation-lab.github.io/), and represents its predecessor. It conusumes a [REST API](https://github.com/ivans-innovation-lab-monorepos/my-company-backend),and enables you to manage blog posts, projects and teams of a 'fictitious' company.
+This **frontend** application/s is a mono-repo version of the [lab (multi-repo version)](http://ivans-innovation-lab.github.io/), and represents its predecessor. It conusumes a [REST API](https://github.com/ivans-innovation-lab-monorepos/my-company-backend), and enables you to manage blog posts, projects and teams of a 'fictitious' company.
 
 ![Monorepo](https://github.com/ivans-innovation-lab-monorepos/my-company-backend/raw/master/monorepo.png)
 
