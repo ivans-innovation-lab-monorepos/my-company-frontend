@@ -1,5 +1,5 @@
 import { ProjectModel } from './project.model';
-import { PageModel} from '../page.model';
+import { PageModel } from '../page.model';
 
 export class ProjectsModel {
   projects: ProjectModel[];

@@ -6,7 +6,6 @@ import { EventManager } from '../event-manager.service';
 import { UserModel } from './user.model';
 import { UsersService } from './users.service';
 
-
 export class UsersDataSource extends DataSource<UserModel> {
   page: PageModel;
 

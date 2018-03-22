@@ -6,8 +6,6 @@ import { EventManager } from '../event-manager.service';
 import { BlogModel } from './blog.model';
 import { BlogService } from './blog.service';
 
-
-/** ###################### Data source ########################## **/
 export class BlogDataSource extends DataSource<BlogModel> {
   page: PageModel;
 
