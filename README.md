@@ -111,3 +111,6 @@ Before running the tests make sure you are serving the app via `ng serve`.
 - https://angular.io/guide/architecture
 - https://nrwl.io/nx/why-a-workspace
 - https://blog.nrwl.io/nrwl-nx-an-open-source-toolkit-for-enterprise-angular-applications-38698e94d65
+- https://blog.nrwl.io/smarter-faster-builds-with-nrwl-nx-c2fd0d1a3277
+- https://izifortune.com/multiple-packages-repository-with-angular/
+
