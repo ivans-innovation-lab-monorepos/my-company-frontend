@@ -1,0 +1,15 @@
+{
+  "$schema": "../../node_modules/ng-packagr/package.schema.json",
+  "name": "@my-company-frontend/blog",
+  "version": "1.0.0",
+  "dependencies": {
+    "@my-company-frontend/shared": "^1.0.0",
+    "@my-company-frontend/presentational-components": "^1.0.0"
+  },
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts"
+    },
+    "dest": "../../dist/@my-company-frontend/blog"
+  }
+}

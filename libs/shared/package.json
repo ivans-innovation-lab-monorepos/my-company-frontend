@@ -1,0 +1,12 @@
+{
+  "$schema": "../../node_modules/ng-packagr/package.schema.json",
+  "name": "@my-company-frontend/shared",
+  "version": "1.0.0",
+  "private": false,
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts"
+    },
+    "dest": "../../dist/@my-company-frontend/shared"
+  }
+}

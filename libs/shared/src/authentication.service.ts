@@ -2,12 +2,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { TOKEN_AUTH_PASSWORD, TOKEN_AUTH_USERNAME } from './auth.constant';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AuthenticationService {
   constructor(private http: HttpClient) {}
 
-  login(username: string, password: string) {
+  login(username: string, password: string): Observable<any> {
     const body = `username=${encodeURIComponent(
       username
     )}&password=${encodeURIComponent(password)}&grant_type=password`;
