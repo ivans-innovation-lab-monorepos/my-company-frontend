@@ -74,7 +74,25 @@ We put our general layout and styling to the [`main-list-blog.component.scss`](h
 
 To use our custom component theme, we have to include it in the application [styles.scss](https://github.com/ivans-innovation-lab-monorepos/my-company-frontend/blob/master/apps/my-company-ui/src/styles/styles.scss) file.
 
-  
+## Generate documentation
+
+We are using [Compodoc](https://compodoc.github.io/website/guides/getting-started.html) as a documentation tool for Angular. It generates a static documentation of our applications and libraries.
+
+### Build static documentation
+
+By running the command below, a static documentation will be generated in 'documentation' folder. 
+```
+$ npm run compodoc:build
+```
+
+### Serve static documentation
+
+By running the command below, a static documentation will be generated in 'documentation' folder and served on [http://127.0.0.1:8080](http://127.0.0.1:8080). 
+```
+$ npm run compodoc:serve
+```
+
+
 ## Running instructions
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) using [Nrwl Nx](https://nrwl.io/nx).
