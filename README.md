@@ -74,25 +74,6 @@ We put our general layout and styling to the [`main-list-blog.component.scss`](h
 
 To use our custom component theme, we have to include it in the application [styles.scss](https://github.com/ivans-innovation-lab-monorepos/my-company-frontend/blob/master/apps/my-company-ui/src/styles/styles.scss) file.
 
-## Generate documentation
-
-We are using [Compodoc](https://compodoc.github.io/website/guides/getting-started.html) as a documentation tool for Angular. It generates a static documentation of our applications and libraries.
-
-### Build static documentation
-
-By running the command below, a static documentation will be generated in 'documentation' folder. 
-```
-$ npm run compodoc:build
-```
-
-### Serve static documentation
-
-By running the command below, a static documentation will be generated in 'documentation' folder and served on [http://127.0.0.1:8080](http://127.0.0.1:8080). 
-```
-$ npm run compodoc:serve
-```
-
-
 ## Running instructions
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) using [Nrwl Nx](https://nrwl.io/nx).
@@ -123,10 +104,29 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 Before running the tests make sure you are serving the app via `ng serve`.
 
+## Generate documentation
+
+We are using [Compodoc](https://compodoc.github.io/website/guides/getting-started.html) as a documentation tool for Angular. It generates a static documentation of our applications and libraries.
+
+### Build static documentation
+
+By running the command below, a static documentation will be generated in 'documentation' folder. 
+```
+$ npm run compodoc:build
+```
+
+### Serve static documentation
+
+By running the command below, a static documentation will be generated in 'documentation' folder and served on [http://127.0.0.1:8080](http://127.0.0.1:8080). 
+```
+$ npm run compodoc:serve
+```
+
 ## References and further reading
 
 - https://www.safaribooksonline.com/library/view/building-evolutionary-architectures/9781491986356/ch04.html
 - https://angular.io/guide/architecture
+- https://www.softwarearchitekt.at/post/2017/12/28/a-software-architect-s-approach-towards-using-angular-and-spas-in-general-for-microservices-aka-microfrontends.aspx
 - https://nrwl.io/nx/why-a-workspace
 - https://blog.nrwl.io/nrwl-nx-an-open-source-toolkit-for-enterprise-angular-applications-38698e94d65
 - https://blog.nrwl.io/smarter-faster-builds-with-nrwl-nx-c2fd0d1a3277
