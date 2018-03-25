@@ -7,7 +7,7 @@ This **frontend** application/s is a mono-repo version of the [lab (multi-repo v
 
 Instead of having a large monolith, we have dozens of small [libraries](https://github.com/ivans-innovation-lab-monorepos/my-company-frontend/tree/master/libs) with well-defined public APIs (and an [Nx Workspace](https://nrwl.io/nx/why-a-workspace) ensures you only use your libraries’ public APIs). [The libraries](https://github.com/ivans-innovation-lab-monorepos/my-company-frontend/tree/master/libs) are hosting Angular modules most of the time.
 
-At this stage we have one [deployment pipeline](https://circleci.com/gh/ivans-innovation-lab-monorepos/my-company-frontend) for all applications and libraries together. In addition, all projects in the repository share the same dependencies. Hence, there are no version conflicts b/c everyone has to use the same/ the latest version. And you don't need to deal with a registry when you just want to use your own libraries.
+At this stage we have one [deployment pipeline](https://circleci.com/gh/ivans-innovation-lab-monorepos/my-company-frontend) for all projects (apps & libs). In addition, all projects in the repository share the same dependencies. Hence, there are no version conflicts because everyone has to use the same/the latest version. And you don't need to deal with a private NPM registry when you just want to use your own libraries.
 
 ## Benefits of monorepo
 
