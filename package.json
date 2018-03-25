@@ -19,6 +19,7 @@
     "update:check": "./node_modules/.bin/nx update check",
     "update:skip": "./node_modules/.bin/nx update skip",
     "postinstall": "./node_modules/.bin/nx postinstall",
+    "compodoc": "rimraf documentation && ./node_modules/.bin/compodoc -p tsconfig.json",
     "build:libs": "rimraf dist && ./node_modules/.bin/ng-packagr -p libs/shared/package.json && ./node_modules/.bin/ng-packagr -p libs/presentational-components/package.json && ./node_modules/.bin/ng-packagr -p libs/blog/package.json && ./node_modules/.bin/ng-packagr -p libs/projects/package.json && ./node_modules/.bin/ng-packagr -p libs/team/package.json && ./node_modules/.bin/ng-packagr -p libs/users/package.json"
   },
   "private": true,
@@ -51,6 +52,7 @@
     "@angular/cli": "1.7.1",
     "@angular/compiler-cli": "5.2.6",
     "@angular/language-service": "5.2.6",
+    "@compodoc/compodoc": "^1.0.9",
     "@nrwl/schematics": "0.9.1",
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
