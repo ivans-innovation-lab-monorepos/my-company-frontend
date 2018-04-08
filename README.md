@@ -132,3 +132,12 @@ $ npm run compodoc:serve
 - https://blog.nrwl.io/smarter-faster-builds-with-nrwl-nx-c2fd0d1a3277
 - https://izifortune.com/multiple-packages-repository-with-angular/
 
+  ---
+Created by [Ivan Dugalic][idugalic]@[lab][lab].
+Need Help?  [Join our Slack team][slack].
+
+[idugalic]: http://idugalic.pro
+[lab]: http://lab.idugalic.pro
+[slack]: https://communityinviter.com/apps/idugalic/idugalic
+
+
